@@ -1,0 +1,169 @@
+@font-face {
+    font-family: 'nunito';
+    src: url("fonts/nunito.ttf") format('truetype');
+}
+
+:root {
+    --white: #FFFFFF;
+    --light-cream: #EEEBDD;
+    --deep-red: #810000;
+    --dark-maroon: #630000;
+    --almost-black: #1B1717;
+}
+
+body {
+    background-color: var(--light-cream); 
+    color: var(--almost-black);          
+    font-family: 'nunito';
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background-color: var(--dark-maroon);
+    color: var(--light-cream);
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+
+
+.logo {
+    width: 120px;
+    height: 110px;
+    margin: 0;
+}
+
+/* Navigation */
+nav {
+    font-family: "nunito";
+    background-color: var(--deep-red);
+    padding: 15px;
+    align-items: center; 
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin: 20px 20px;
+    padding: 5px;
+    align-items: center; 
+}
+
+nav a {
+    color: var(--light-cream);
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+nav a:hover {
+    color: var(--white); /* hover effect */
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: var(--deep-red);
+    color: var(--light-cream);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dropbtn:hover {
+    background-color: var(--dark-maroon);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--light-cream);
+    min-width: 140px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: var(--almost-black);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 1rem;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--deep-red);
+    color: var(--light-cream);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    transition: opacity 0.3s; /* Add transition for smoother appearance */
+    opacity: 1; /* Set opacity to fully visible */
+}
+
+
+
+
+/* Main content */
+main {
+    padding: 20px;
+}
+
+h2 {
+    color: var(--deep-red); /* Highlight headings */
+    font-size: 2rem;
+}
+
+p {
+    color: var(--almost-black); /* Dark text for readability */
+    line-height: 1.6;
+}
+
+
+
+
+button {
+    background-color: var(--deep-red);
+    color: var(--light-cream);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--dark-maroon); /* Darker shade on hover */
+}
+
+
+
+
+
+/* Footer */
+footer {
+    background-color: var(--almost-black);
+    color: var(--light-cream);
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

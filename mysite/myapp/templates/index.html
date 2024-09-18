@@ -1,0 +1,39 @@
+{% load static %}
+
+
+{% block content %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BC Machine Intelligence Group</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+
+<nav>
+    <div class="nav-container">
+        <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo">
+        <div class="nav-links">
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'eboard' %}">Meet the Board</a>
+            <div class="dropdown">
+                <button class="dropbtn">What We Do</button>
+                <div class="dropdown-content">
+                    <a href="{% url 'lectures' %}">Lectures</a>
+                    <a href="{% url 'workshops' %}">Workshops</a>
+                    <a href="{% url 'events' %}">Calendar</a>
+                    <a href="{% url 'resources' %}">Resources</a>
+                </div>
+            </div>
+            <a href="{% url 'contact' %}">Contact</a>
+        </div>
+    </div>
+</nav>
+
+
+
+
+
+<footer>
+
+</footer>
+{% endblock %}
