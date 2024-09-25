@@ -1,39 +1,108 @@
 {% load static %}
-
-
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>BC Machine Intelligence Group</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boston College Machine Learning Group</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
+<body>
 
-<nav>
-    <div class="nav-container">
-        <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo">
-        <div class="nav-links">
-            <a href="{% url 'index' %}">Home</a>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class = "nav-container">
+        <a href="{% url 'index' %}">
+            <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo">
+        </a>
             <a href="{% url 'eboard' %}">Meet the Board</a>
+            <a href="{% url 'events' %}">Calendar</a>
+            
             <div class="dropdown">
-                <button class="dropbtn">What We Do</button>
+                <button class="dropbtn">Our Programs</button>
                 <div class="dropdown-content">
                     <a href="{% url 'lectures' %}">Lectures</a>
-                    <a href="{% url 'workshops' %}">Workshops</a>
-                    <a href="{% url 'events' %}">Calendar</a>
-                    <a href="{% url 'resources' %}">Resources</a>
+                <a href="{% url 'workshops' %}">Workshops</a>
+                <a href="{% url 'resources' %}">Resources</a>
                 </div>
+                <a href="https://discord.gg/gnuFjMQfgD" target="_blank">Join</a>
             </div>
-            <a href="{% url 'contact' %}">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <img src="{% static 'images/landingimage.png' %}" class="landingimage" alt="Landing Image">
+        <h1 style="flex: 1; width: 400px; text-align: left; margin-left: 2.5em; margin-top: 150px; position:absolute;">Students at the forefront of shaping AI's future.</h1>
+    </div>
+
+    <!-- Mission Section -->
+    <div class="about">
+        <div style="display: flex; align-items: center;">
+            <div style="margin-left: 4.5em;">
+                <h2>Our Mission</h2>
+                <p>
+                    The Boston College Machine Learning Group is a hub of highly motivated undergraduate students committed to 
+                    advancing the field of machine learning. <br><br> Our mission is to develop, explore, and apply machine learning techniques 
+                    to solve real-world problems and to promote knowledge and skills in AI through workshops, guest lectures, and hands-on projects.
+                </p>
+            </div>
+            <img src="{% static 'images/about.png' %}" class="aboutimage" alt="Mission Image">
         </div>
     </div>
-</nav>
 
+    <!-- Recent Work Section -->
+    <div class="recent">
+        <h2>Recent Events</h2>
+        <div style="display: flex; align-items: center;">
+            <div class="event">
+                <img src="{% static 'images/lecture.png' %}" class="eventimage" alt="Guest Lecture Image">
+                <h3>Guest Lecture: Dr. Andrew Ng</h3>
+                <p>Dr. Andrew Ng, a leading figure in the AI community, gave a talk on the future of AI and its implications for society.</p>
+            </div>
 
+            <div class="event">
+                <img src="{% static 'images/workshop.png' %}" class="eventimage" alt="Workshop Image">
+                <h3>Workshop: Python for ML</h3>
+                <p>An introductory workshop on using Python for machine learning, covering key libraries such as NumPy, Pandas, and scikit-learn.</p>
+            </div>
 
+            <div class="event">
+                <img src="{% static 'images/hackathon.png' %}" class="eventimage" alt="Hackathon Image">
+                <h3>AI for Social Good Hackathon</h3>
+                <p>A weekend hackathon focused on using AI to tackle issues related to education, healthcare, and sustainability.</p>
+            </div>
+        </div>
+    </div>
 
+    <!-- Explore Section -->
+    <div class="explore_tab">
+        <h3>Explore our</h3>
+        <a href="{% url 'lectures' %}">Lectures</a>
+        <a href="{% url 'workshops' %}">Workshops</a>
+        <a href="{% url 'resources' %}">Resources</a>
+    </div>
 
-<footer>
+    <!-- Call to Action (Discord Join) -->
+    <div class="contact">
+        <h2>Join Our Discord Community</h2>
+        <p>Connect with students, researchers, and professionals passionate about machine learning.</p>
+        <a href="https://discord.com/invite/yourlink" target="_blank">Join our Discord</a>
+    </div>
 
-</footer>
-{% endblock %}
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-links">
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'eboard' %}">Meet the Board</a>
+            <a href="{% url 'lectures' %}">Lectures</a>
+            <a href="{% url 'workshops' %}">Workshops</a>
+            <a href="{% url 'events' %}">Calendar</a>
+            <a href="{% url 'resources' %}">Resources</a>
+        </div>
+        <p>&copy; 2024 Boston College Machine Learning Group</p>
+    </footer>
+
+</body>
+</html>

@@ -1,20 +1,20 @@
 @font-face {
     font-family: 'nunito';
-    src: url("fonts/nunito.ttf") format('truetype');
+    src: url("nunito.ttf") format('truetype');
 }
 
 :root {
     --white: #FFFFFF;
     --light-cream: #EEEBDD;
-    --deep-red: #810000;
-    --dark-maroon: #630000;
+    --deep-red: #9c1717;
+    --dark-maroon: #7a0303;
     --almost-black: #1B1717;
 }
 
 body {
-    background-color: var(--light-cream); 
+    background-color: var(--white); 
     color: var(--almost-black);          
-    font-family: 'nunito';
+    font-family: 'nunito', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -34,35 +34,32 @@ header h1 {
 
 
 
-.logo {
+nav .logo {
     width: 120px;
     height: 110px;
-    margin: 0;
+    padding: 30px 30px;
+    margin-bottom: -70px;
 }
 
 /* Navigation */
-nav {
-    font-family: "nunito";
-    background-color: var(--deep-red);
-    padding: 15px;
-    align-items: center; 
-}
 
-nav {
-    display: flex;
-    justify-content: center;
-}
+    nav {
+        font-family: "nunito";
+        background-color: var(--deep-red);
+        padding: 15px;
+        align-items: center; 
+        display: flex;
+        justify-content: center;
+        margin-top: -50px;
+        margin-left: -70px;
+        border-radius: 30px; /* Apply border-radius to all sides */
+    }
+
 
 nav a {
     list-style: none;
-    margin: 0;
-    padding: 0;
     margin: 20px 20px;
     padding: 5px;
-    align-items: center; 
-}
-
-nav a {
     color: var(--light-cream);
     text-decoration: none;
     font-size: 1.2rem;
@@ -83,28 +80,32 @@ nav a:hover {
     color: var(--light-cream);
     border: none;
     cursor: pointer;
+    font-size: 1.2rem;
+    font-family: 'nunito', sans-serif;
     transition: background-color 0.3s;
 }
 
 .dropbtn:hover {
-    background-color: var(--dark-maroon);
+    background-color: var(--white);
+    color: var(--deep-red);
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: var(--light-cream);
+    background-color: var(--dark-maroon);
     min-width: 140px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
 
 .dropdown-content a {
-    color: var(--almost-black);
+    color: var(--white);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    font-family: 'nunito', sans-serif;
 }
 
 .dropdown-content a:hover {
@@ -124,6 +125,11 @@ nav a:hover {
 /* Main content */
 main {
     padding: 20px;
+}
+
+h1 {
+    color: var(--deep-red); /* Highlight headings */
+    font-size: 3.9rem;
 }
 
 h2 {
@@ -154,9 +160,6 @@ button:hover {
 }
 
 
-
-
-
 /* Footer */
 footer {
     background-color: var(--almost-black);
@@ -167,3 +170,61 @@ footer {
     width: 100%;
     bottom: 0;
 }
+
+
+/* Images */
+
+.landingimage {
+    width: 55%;
+    height: auto;
+    object-fit: cover;
+    position: absolute;
+    right: 20px;
+    top: 100px;
+    transform: rotate(-50deg);
+    z-index: -1; /* Add a negative z-index to place the image behind other elements */
+}
+
+.aboutimage {
+    width: auto;
+    height: 70%;
+    object-fit: cover;
+    position: absolute;
+    right: 20px;
+    top: 100px;
+    z-index: -1;
+}
+
+.contactimage {
+    position: relative; /* Add relative positioning */
+}
+
+
+/* Widgets of each page */
+
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    margin-left: 2em;
+}
+
+.about {
+    margin-top: 80px;
+}
+
+.about p {
+    width: 785px;
+    font-size: 1.4rem;
+    color: var(--deep-red);
+}
+
+
+
+
+
+
+
+/* Responsive design */
+
+
