@@ -48,28 +48,50 @@
                     to solve real-world problems and to promote knowledge and skills in AI through workshops, guest lectures, and hands-on projects.
                 </p>
             </div>
-            <img src="{% static 'images/about.png' %}" class="aboutimage" alt="Mission Image">
+
+            <div class="faqs">
+                <div class="faq">
+                    <h3 class="faq-question" onclick="toggleAnswer(this)">I don't know anything about AI or programming. Should I still join?</h3>
+                    <p class="faq-answer">Yes! The first MIG lecture each year is a crash course in machine learning and following lectures are approachable to a general audience. As the year goes on, we will dive into increasingly complex topics, but we also strive to provide a space to ask any questions no matter how rudimentary. Alongside the resources we share during meetings, our <a href="{% url 'resources' %}">resource page</a> is perfect for a beginner to hone their understanding and comfort with overtime.</p>
+                </div>
+                <div class="faq">
+                    <h3 class="faq-question" onclick="toggleAnswer(this)">Could MIG help me get involved with research?</h3>
+                    <p class="faq-answer">Yes! The eboard and your fellow club members have connections in the BC research community and beyond. Just ask!</p>
+                </div>
+                <div class="faq">
+                    <h3 class="faq-question" onclick="toggleAnswer(this)">Can I give a talk at MIG?</h3>
+                    <p class="faq-answer">Anyone in MIG can volunteer to give a talk at our weekly meetings. Talks typically run ~30 minutes and are supplemented with a slide show (and the occasional notebook). All talks are recorded and posted on the Youtube channel. <a href="https://docs.google.com/spreadsheets/d/1_6mwXcgj5KpD-l4cis5ffRtdCGzpTVsuvfdd8IpJllY/edit?gid=0#gid=0" target="_blank">Signing up to give a talk</a> implies consent to be recorded. If you have any questions or concerns, please reach out to an eboard member.</p>
+                </div>
+            </div>
+            
         </div>
     </div>
 
+
+
+
+
     <!-- Recent Work Section -->
     <div class="recent">
-        <h2>Recent Events</h2>
+        <h2 style="margin-left: 2.2em;">Recent Events</h2>
         <div style="display: flex; align-items: center;">
-            <div class="event">
+            <div class="event" style="margin-left: 4.5em;">
                 <img src="{% static 'images/lecture.png' %}" class="eventimage" alt="Guest Lecture Image">
+                <p class="date">September 20, 2024</p>
                 <h3>Guest Lecture: Dr. Andrew Ng</h3>
                 <p>Dr. Andrew Ng, a leading figure in the AI community, gave a talk on the future of AI and its implications for society.</p>
             </div>
 
             <div class="event">
                 <img src="{% static 'images/workshop.png' %}" class="eventimage" alt="Workshop Image">
+                <p class="date">September 20, 2024</p>
                 <h3>Workshop: Python for ML</h3>
                 <p>An introductory workshop on using Python for machine learning, covering key libraries such as NumPy, Pandas, and scikit-learn.</p>
             </div>
 
             <div class="event">
                 <img src="{% static 'images/hackathon.png' %}" class="eventimage" alt="Hackathon Image">
+                <p class="date">September 20, 2024</p>
                 <h3>AI for Social Good Hackathon</h3>
                 <p>A weekend hackathon focused on using AI to tackle issues related to education, healthcare, and sustainability.</p>
             </div>
@@ -91,8 +113,16 @@
         <a href="https://discord.com/invite/yourlink" target="_blank">Join our Discord</a>
     </div>
 
-    <!-- Footer Section -->
-    <footer>
+
+
+
+
+
+
+
+
+
+    <div class = "footer">
         <div class="footer-links">
             <a href="{% url 'index' %}">Home</a>
             <a href="{% url 'eboard' %}">Meet the Board</a>
@@ -102,7 +132,42 @@
             <a href="{% url 'resources' %}">Resources</a>
         </div>
         <p>&copy; 2024 Boston College Machine Learning Group</p>
-    </footer>
+    </div>
 
+
+
+
+
+
+
+    <script>
+        function toggleAnswer(questionElement) {
+            const faq = questionElement.parentElement;
+            faq.classList.toggle('active');
+            if (faq.classList.contains('active')) {
+                faq.style.animation = 'bubblyJump 0.5s ease-in-out';
+            } else {
+                faq.style.animation = '';
+            }
+        }
+    </script>
+    <style>
+        @keyframes bubblyJump {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
 </body>
+
+
+
+
+
 </html>

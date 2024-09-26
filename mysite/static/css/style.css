@@ -36,9 +36,9 @@ header h1 {
 
 nav .logo {
     width: 120px;
-    height: 110px;
+    height: 50px;
     padding: 30px 30px;
-    margin-bottom: -70px;
+    margin-bottom: -40px;
 }
 
 /* Navigation */
@@ -47,12 +47,12 @@ nav .logo {
         font-family: "nunito";
         background-color: var(--deep-red);
         padding: 15px;
+        padding-top: 60px;
         align-items: center; 
         display: flex;
         justify-content: center;
         margin-top: -50px;
         margin-left: -70px;
-        border-radius: 30px; /* Apply border-radius to all sides */
     }
 
 
@@ -210,7 +210,7 @@ footer {
 }
 
 .about {
-    margin-top: 80px;
+    margin-top: 160px;
 }
 
 .about p {
@@ -219,8 +219,125 @@ footer {
     color: var(--deep-red);
 }
 
+/* FAQ */
+.faq {
+    border: 2px solid var(--deep-red);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-left: 160px;
+    overflow: hidden;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.faq-question {
+    background-color: var(--white);
+    cursor: pointer;
+    padding: 15px;
+    font-size: 15px;
+    margin: 0;
+}
+
+.faq-answer {
+    max-height: 0;
+    display: none; /* Initially hidden */
+    padding: 15px;
+    overflow: hidden;
+    color: var(--almost-black);
+    font-family: 13px;
+}
+
+.faq.active {
+    background-color: var(--deep-red);
+    border-color: var(--dark-maroon);
+    font-family: 13px;
+}
+
+.faq.active .faq-answer {
+    display: block; /* Show when active */
+    max-height: 200px;
+    max-width: 400px;
+    font-size: 13px;
+    padding: 15px;
+    transition: max-height 0.3s; /* Add transition for smoother appearance */
+    color: var(--white);
+    font-family: 14px;
+}
+
+.faq a {
+    color: var(--light-cream);
+}
+
+.faq a:hover {
+    color: var(--white);
+}
 
 
+.recent {
+    margin-top: 200px;
+}
+
+.event {
+    background-color: var(--deep-red);
+    border: 2px solid var(--light-cream);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-left: 160px;
+    overflow: hidden;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.event h3 {
+    color: var(--white);
+    cursor: pointer;
+    padding: 15px;
+    font-size: 18px;
+}
+
+.event p {
+    max-height: 30px;
+    margin-top: -40px;
+    padding: 15px;
+    color: var(--white);
+    font-size: 14px;
+}
+
+.date {
+    margin-top: -40px;
+    padding: 15px;
+    color: var(--white);
+    font-size: 13px;
+}
+
+
+
+/* Explore tab */
+.explore_tab {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    border: 2px solid var(--deep-red);
+    border-radius: 5px;
+    padding: 10px 45px; 
+    margin: 90px auto; 
+    width: fit-content; 
+}
+
+.explore_tab h3 {
+    margin-right: 20px;
+}
+
+.explore_tab a {
+    color: var(--deep-red);
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+}
+
+.explore_tab a:hover {
+    background-color: transparent;
+    color: var(--dark-maroon);
+}
 
 
 
