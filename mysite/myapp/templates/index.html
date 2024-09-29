@@ -76,21 +76,21 @@
         <h2 style="margin-left: 2.2em;">Recent Events</h2>
         <div style="display: flex; align-items: center;">
             <div class="event" style="margin-left: 4.5em;">
-                <img src="{% static 'images/lecture.png' %}" class="eventimage" alt="Guest Lecture Image">
+                <img src="{% static 'images/test.png' %}" class="eventimage" alt="Guest Lecture Image">
                 <p class="date">September 20, 2024</p>
                 <h3>Guest Lecture: Dr. Andrew Ng</h3>
                 <p>Dr. Andrew Ng, a leading figure in the AI community, gave a talk on the future of AI and its implications for society.</p>
             </div>
 
             <div class="event">
-                <img src="{% static 'images/workshop.png' %}" class="eventimage" alt="Workshop Image">
+                <img src="{% static 'images/test.png' %}" class="eventimage" alt="Workshop Image">
                 <p class="date">September 20, 2024</p>
                 <h3>Workshop: Python for ML</h3>
-                <p>An introductory workshop on using Python for machine learning, covering key libraries such as NumPy, Pandas, and scikit-learn.</p>
+                <p class="event_info">An introductory workshop on using Python for machine learning, covering key libraries such as NumPy, Pandas, and scikit-learn.</p>
             </div>
 
             <div class="event">
-                <img src="{% static 'images/hackathon.png' %}" class="eventimage" alt="Hackathon Image">
+                <img src="{% static 'images/test.png' %}" class="eventimage" alt="Hackathon Image">
                 <p class="date">September 20, 2024</p>
                 <h3>AI for Social Good Hackathon</h3>
                 <p>A weekend hackathon focused on using AI to tackle issues related to education, healthcare, and sustainability.</p>
@@ -107,22 +107,29 @@
     </div>
 
     <!-- Call to Action (Discord Join) -->
+    <!-- IMPLEMENT EMAIL SENT -->
     <div class="contact">
-        <h2>Join Our Discord Community</h2>
-        <p>Connect with students, researchers, and professionals passionate about machine learning.</p>
-        <a href="https://discord.com/invite/yourlink" target="_blank">Join our Discord</a>
+        <h2>Interested?</h2>
+        <p style="width: 700px;">Join a community of innovators exploring the limitless possibilities of AI and machine learning. Discover, learn, and make an impact with us.</p>
+        <form action="send_email.php" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" placeholder="Subject of Email"required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Your Email"required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" placeholder="Write your message here!" required></textarea>
+            
+            <button type="submit">Send Message</button>
+        </form>
+        
+        <a class="join_bc" href="https://discord.gg/gnuFjMQfgD" target="_blank">BC Student? Click here.</a>
     </div>
 
-
-
-
-
-
-
-
-
-
     <div class = "footer">
+        <img src="{% static 'images/logo.png' %}" alt="Logo" class="footer_logo">
+
         <div class="footer-links">
             <a href="{% url 'index' %}">Home</a>
             <a href="{% url 'eboard' %}">Meet the Board</a>
@@ -131,7 +138,7 @@
             <a href="{% url 'events' %}">Calendar</a>
             <a href="{% url 'resources' %}">Resources</a>
         </div>
-        <p>&copy; 2024 Boston College Machine Learning Group</p>
+        <p style="font-size: 8px;">&copy; 2024 Boston College Machine Learning Group</p>
     </div>
 
 
@@ -150,6 +157,15 @@
                 faq.style.animation = '';
             }
         }
+
+        window.onscroll = function() {
+    const nav = document.querySelector('nav');
+    if (window.pageYOffset > 0) {
+        nav.classList.add('sticky');
+    } else {
+        nav.classList.remove('sticky');
+    }
+};
     </script>
     <style>
         @keyframes bubblyJump {

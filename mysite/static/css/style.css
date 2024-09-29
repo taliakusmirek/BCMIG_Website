@@ -6,6 +6,7 @@
 :root {
     --white: #FFFFFF;
     --light-cream: #EEEBDD;
+    --red: #b71010;
     --deep-red: #9c1717;
     --dark-maroon: #7a0303;
     --almost-black: #1B1717;
@@ -13,6 +14,7 @@
 
 body {
     background-color: var(--white); 
+    overflow-x: hidden;
     color: var(--almost-black);          
     font-family: 'nunito', sans-serif;
     margin: 0;
@@ -42,24 +44,31 @@ nav .logo {
 }
 
 /* Navigation */
+nav {
+    font-family: "nunito";
+    background-color: var(--deep-red);
+    padding: 15px;
+    padding-top: 10px;
+    align-items: center; 
+    display: flex;
+    justify-content: center;
+    margin-top: -50px; /* Adjust as necessary */
+    margin-left: -70px; /* Adjust as necessary */
+    position: sticky; /* Make it sticky */
+    top: 0; /* Stick to the top */
+    z-index: 1000; /* Ensure it stays above other content */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transition for background and shadow */
+}
 
-    nav {
-        font-family: "nunito";
-        background-color: var(--deep-red);
-        padding: 15px;
-        padding-top: 60px;
-        align-items: center; 
-        display: flex;
-        justify-content: center;
-        margin-top: -50px;
-        margin-left: -70px;
-    }
-
+nav.sticky {
+    background-color: var(--dark-maroon); /* Change background when sticky */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
 
 nav a {
     list-style: none;
     margin: 20px 20px;
-    padding: 5px;
+    padding: 10px;
     color: var(--light-cream);
     text-decoration: none;
     font-size: 1.2rem;
@@ -195,10 +204,6 @@ footer {
     z-index: -1;
 }
 
-.contactimage {
-    position: relative; /* Add relative positioning */
-}
-
 
 /* Widgets of each page */
 
@@ -211,22 +216,30 @@ footer {
 
 .about {
     margin-top: 160px;
+    padding-bottom: 100px;
+    padding-right: 20px;
 }
 
 .about p {
     width: 785px;
     font-size: 1.4rem;
-    color: var(--deep-red);
+    color: var(--red);
 }
 
+.faqs {
+    padding-right: -30px;
+}
 /* FAQ */
 .faq {
     border: 2px solid var(--deep-red);
     border-radius: 10px;
     margin-bottom: 10px;
-    margin-left: 160px;
+    margin-left: 140px;
+    padding-right: 20px;
+    right: 70px; /* Updated value */
     overflow: hidden;
     transition: background-color 0.3s, border-color 0.3s;
+    padding: 0px 10px;
 }
 
 .faq-question {
@@ -282,6 +295,7 @@ footer {
     border-radius: 10px;
     margin-bottom: 10px;
     margin-left: 160px;
+    padding-right: 30px;
     overflow: hidden;
     transition: background-color 0.3s, border-color 0.3s;
 }
@@ -291,24 +305,32 @@ footer {
     cursor: pointer;
     padding: 15px;
     font-size: 18px;
+    margin-left: 3px;
 }
 
 .event p {
-    max-height: 30px;
-    margin-top: -40px;
-    padding: 15px;
-    color: var(--white);
-    font-size: 14px;
-}
-
-.date {
-    margin-top: -40px;
-    padding: 15px;
+    max-height: 50px;
+    margin-top: -50px;
+    margin-left: -10px;
+    padding: 30px 30px; 
     color: var(--white);
     font-size: 13px;
 }
 
 
+.date {
+    margin-bottom:-60px;
+    color: var(--white);
+    font-size: 10rem;
+    
+}
+
+.eventimage {
+    width: 80%;
+    height: auto;
+    margin-bottom: 10px;
+    padding: 30px 35px;
+}
 
 /* Explore tab */
 .explore_tab {
@@ -337,6 +359,120 @@ footer {
 .explore_tab a:hover {
     background-color: transparent;
     color: var(--dark-maroon);
+}
+
+
+.contact {
+    background: var(--red);
+    color: var(--white);
+}
+
+.contact h2 {
+    margin-top: 160px;
+    padding: 50px 60px;
+    font-size: 2.5rem;
+    color: var(--white);
+}
+
+.contact p {
+    font-size: 1.0rem;
+    color: var(--white);
+    margin-top: -90px;
+    padding: 20px 60px;
+}
+
+.contact form {
+    margin: 20px 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact label {
+    font-weight: bold;
+    display: none;
+}
+
+.contact input, .contact textarea {
+    width: 50%;
+    font-family: "nunito";
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact button {
+    background-color: var(--deep-red);
+    color: var(--light-cream);
+    font-family: "nunito";
+    border: none;
+    width: 20%;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact button:hover {
+    background-color: var(--light-cream);
+    color: var(--deep-red);
+}
+
+.join_bc {
+    text-decoration: none;
+    color: var(--white);
+    margin: -10px 60px;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.join_bc:hover {
+    text-decoration: underline;
+    color: var(--light-cream);
+    
+}
+
+.contactimage {
+    width: 50%; /* Use 100% to fill the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure it covers the area properly */
+    right: 0;
+    top: 0;
+    z-index: -1; 
+    position: flex; /* Ensure positioning is set */
+    overflow: hidden; /* Hide overflow if necessary */
+}
+
+.footer {
+    background-color: var(--almost-black);
+}
+
+.footer {
+    padding-top: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer a, .footer p {
+    padding: 20px 10px;
+    font-size: 13px;
+    text-decoration: none;
+    color: white;
+}
+
+.footer a:hover {
+    color: red;
+}
+
+.footer_logo{
+    width: 8%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 
