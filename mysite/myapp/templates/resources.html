@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boston College Machine Learning Group</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class = "nav-container">
+        <a href="{% url 'index' %}">
+            <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo">
+        </a>
+            <a href="{% url 'eboard' %}">Meet the Board</a>
+            <a href="{% url 'events' %}">Calendar</a>
+            
+            <div class="dropdown">
+                <button class="dropbtn">Our Programs</button>
+                <div class="dropdown-content">
+                    <a href="{% url 'lectures' %}">Lectures</a>
+                <a href="{% url 'workshops' %}">Workshops</a>
+                <a href="{% url 'resources' %}">Resources</a>
+                </div>
+                <a href="https://discord.gg/gnuFjMQfgD" target="_blank">Join</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Resources Section -->
+    
+
+
+
+
+    <!-- Explore Section -->
+    <div class="explore_tab">
+        <h3>Explore our</h3>
+        <a href="{% url 'lectures' %}">Lectures</a>
+        <a href="{% url 'workshops' %}">Workshops</a>
+        <a href="{% url 'resources' %}">Resources</a>
+    </div>
+
+    <!-- Call to Action (Discord Join) -->
+    <!-- IMPLEMENT EMAIL SENT -->
+    <div class="contact">
+        <h2>Interested?</h2>
+        <p style="width: 700px;">Join a community of innovators exploring the limitless possibilities of AI and machine learning. Discover, learn, and make an impact with us.</p>
+        <form action="send_email.php" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" placeholder="Subject of Email"required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Your Email"required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" placeholder="Write your message here!" required></textarea>
+            
+            <button type="submit">Send Message</button>
+        </form>
+        
+        <a class="join_bc" href="https://discord.gg/gnuFjMQfgD" target="_blank">BC Student? Click here.</a>
+    </div>
+
+    <div class = "footer">
+        <img src="{% static 'images/logo.png' %}" alt="Logo" class="footer_logo">
+
+        <div class="footer-links">
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'eboard' %}">Meet the Board</a>
+            <a href="{% url 'lectures' %}">Lectures</a>
+            <a href="{% url 'workshops' %}">Workshops</a>
+            <a href="{% url 'events' %}">Calendar</a>
+            <a href="{% url 'resources' %}">Resources</a>
+        </div>
+        <p style="font-size: 8px;">&copy; 2024 Boston College Machine Learning Group</p>
+    </div>
+
+
+
+
+
+
+
+    <script>
+        function toggleAnswer(questionElement) {
+            const faq = questionElement.parentElement;
+            faq.classList.toggle('active');
+            if (faq.classList.contains('active')) {
+                faq.style.animation = 'bubblyJump 0.5s ease-in-out';
+            } else {
+                faq.style.animation = '';
+            }
+        }
+
+        window.onscroll = function() {
+    const nav = document.querySelector('nav');
+    if (window.pageYOffset > 0) {
+        nav.classList.add('sticky');
+    } else {
+        nav.classList.remove('sticky');
+    }
+};
+    </script>
+    <style>
+        @keyframes bubblyJump {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</body>
+
+</html>

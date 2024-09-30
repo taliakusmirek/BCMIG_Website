@@ -422,7 +422,7 @@ footer {
     color: var(--white);
     margin: -10px 60px;
     font-size: 12px;
-    margin-bottom: 10px;
+    padding-bottom: 20px;
 }
 
 .join_bc:hover {
@@ -432,14 +432,14 @@ footer {
 }
 
 .contactimage {
-    width: 50%; /* Use 100% to fill the container */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Ensure it covers the area properly */
+    width: 50%; 
+    height: auto; 
+    object-fit: cover; 
     right: 0;
     top: 0;
     z-index: -1; 
-    position: flex; /* Ensure positioning is set */
-    overflow: hidden; /* Hide overflow if necessary */
+    position: flex; 
+    overflow: hidden; 
 }
 
 .footer {
@@ -476,7 +476,63 @@ footer {
 }
 
 
+/* Main Executive Board Section */
+.eboard {
+    text-align: center;
+    margin: 40px 40px;
+}
 
+.board {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px; /* Space between each board member */
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.board-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    margin: 5px -10px;
+}
+
+.board-image {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.board-member h3 {
+    font-size: 18px;
+    color: var(--deep-red);
+    margin-top: 10px;
+}
+
+.board-member p {
+    font-size: 14px;
+    color: var(--almost-black);
+    margin-top: -15px;
+}
+
+/* Board Rows */
+.board-member:nth-child(-n+4) {
+    order: 1; /* First row - first 4 members */
+}
+
+.board-member:nth-child(n+5) {
+    order: 2; /* Second row - remaining 3 members */
+}
+
+.linkedin {
+    width: 20px;
+    height: 20px;
+    margin-top: 10px;
+
+}
 
 /* Responsive design */
 
