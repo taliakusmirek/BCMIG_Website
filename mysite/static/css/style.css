@@ -295,37 +295,39 @@ footer {
     margin-left: 160px;
     overflow: hidden;
     transition: background-color 0.3s, border-color 0.3s;
+    display: flex; /* Add flex display */
+    align-items: flex-start; /* Align items to the top */
 }
 
 .event h3 {
     color: var(--white);
     cursor: pointer;
-    padding: 15px;
     font-size: 18px;
     margin-left: 3px;
+    margin-top: 0; /* Remove top margin */
 }
 
 .event p {
     max-height: 50px;
-    margin-top: -60px;
     margin-left: -10px;
-    padding: 30px 30px; 
+    padding: 0 30px; /* Remove top and bottom padding */
     color: var(--white);
     font-size: 13px;
+    margin-bottom: 0; /* Remove bottom margin */
 }
 
 .date {
-    margin-bottom:-60px;
+    margin-bottom: -90px;
     color: var(--white);
     font-size: 10rem;
-    
+    margin-right: 10px; /* Adjust right margin */
 }
 
 .eventimage {
-    width: 80%;
+    width: 90%;
     height: auto;
     margin-bottom: 10px;
-    padding: 30px 35px;
+    padding: 30px 30px;
 }
 
 /* Explore tab */
