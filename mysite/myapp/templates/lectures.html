@@ -32,7 +32,34 @@
     </nav>
 
     <!-- Lectures Section -->
-    
+    <div class="recent">
+        <h2 style="text-align: center; margin-top:-40px;">Our Lectures</h2>
+        <div style="display: flex; align-items: center; padding-right: 40px;">
+            <div class="event">
+                <img src="{% static 'images/test.png' %}" class="eventimage" alt="Guest Lecture Image">
+                <p class="date">September 23, 2024</p>
+                <h3>Synthetic Signature Generation</h3>
+                <p>Josh Gorniak discusses his summer research on signatures.                </p>
+                <a class="lecture_link" href="https://www.youtube.com/watch?v=tzkl9OELL64&t=1s">Watch Here!</a>
+            </div>
+
+            <div class="event">
+                <img src="{% static 'images/test.png' %}" class="eventimage" alt="Workshop Image">
+                <p class="date">September 16, 2024</p>
+                <h3>Introduction to CNNs</h3>
+                <p>Learn the basics of Convolutional Neural Networks with Steve!</p>
+                <a class="lecture_link" href="https://www.youtube.com/watch?v=ydqwP93WQ_4&t=771s">Watch Here!</a>
+            </div>
+
+            <div class="event">
+                <img src="{% static 'images/test.png' %}" class="eventimage" alt="Hackathon Image">
+                <p class="date">September 9, 2024</p>
+                <h3>Introduction to Machine Learning</h3>
+                <p>Talk by Jason Ken Adhinarta!</p>
+                <a class="lecture_link" href="https://www.youtube.com/watch?v=D-2qMSEclbg&t=2s">Watch Here!</a>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -76,6 +103,10 @@
             <a href="{% url 'workshops' %}">Workshops</a>
             <a href="{% url 'events' %}">Calendar</a>
             <a href="{% url 'resources' %}">Resources</a>
+        </div>
+        <div class="footer-links" style="margin-top: 20px;">
+            <a href="https://instagram.com/migbostoncollege" target="_blank"><img src="{% static 'images/instagram.png' %}" class="linkedin"></a>
+            <a href="https://www.youtube.com/@migofbc" target="_blank"><img src="{% static 'images/youtube.png' %}" class="linkedin"></a>
         </div>
         <p style="font-size: 8px;">&copy; 2024 Boston College Machine Learning Group</p>
     </div>

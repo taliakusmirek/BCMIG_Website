@@ -32,7 +32,31 @@
     </nav>
 
     <!-- Workshops Section -->
-    
+    <div class="recent">
+        <h2 style="text-align: center; margin-top:-40px;">Our Workshops</h2>
+        <div style="display: flex; align-items: center; padding-right:70px;">
+            <div class="event" style="margin-left: 4.5em;">
+                <img src="{% static 'images/test.png' %}" class="eventimage" alt="Guest Lecture Image">
+                <p class="date">September 20, 2024</p>
+                <h3>Guest Lecture: Dr. Andrew Ng</h3>
+                <p>Dr. Andrew Ng, a leading figure in the AI community, gave a talk on the future of AI and its implications for society.</p>
+            </div>
+
+            <div class="event">
+                <img src="{% static 'images/test.png' %}" class="eventimage" alt="Workshop Image">
+                <p class="date">September 20, 2024</p>
+                <h3>Workshop: Python for ML</h3>
+                <p class="event_info">An introductory workshop on using Python for machine learning, covering key libraries such as NumPy, Pandas, and scikit-learn.</p>
+            </div>
+
+            <div class="event">
+                <img src="{% static 'images/test.png' %}" class="eventimage" alt="Hackathon Image">
+                <p class="date">September 20, 2024</p>
+                <h3>AI for Social Good Hackathon</h3>
+                <p>A weekend hackathon focused on using AI to tackle issues related to education, healthcare, and sustainability.</p>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -76,6 +100,10 @@
             <a href="{% url 'workshops' %}">Workshops</a>
             <a href="{% url 'events' %}">Calendar</a>
             <a href="{% url 'resources' %}">Resources</a>
+        </div>
+        <div class="footer-links" style="margin-top: 20px;">
+            <a href="https://instagram.com/migbostoncollege" target="_blank"><img src="{% static 'images/instagram.png' %}" class="linkedin"></a>
+            <a href="https://www.youtube.com/@migofbc" target="_blank"><img src="{% static 'images/youtube.png' %}" class="linkedin"></a>
         </div>
         <p style="font-size: 8px;">&copy; 2024 Boston College Machine Learning Group</p>
     </div>
