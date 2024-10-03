@@ -196,11 +196,11 @@ footer {
 
 .aboutimage {
     width: auto;
-    height: 70%;
+    height: 60%;
     object-fit: cover;
     position: absolute;
     right: 20px;
-    top: 100px;
+    top: 140px;
     z-index: -1;
 }
 
@@ -208,6 +208,7 @@ footer {
 /* Widgets of each page */
 
 .hero-section {
+    margin-top: 40px;
     display: flex;
     justify-content: space-between;
     height: 100vh;
@@ -291,44 +292,44 @@ footer {
     background-color: var(--deep-red);
     border: 2px solid var(--light-cream);
     border-radius: 10px;
-    margin-bottom: 10px;
-    margin-left: 160px;
-    overflow: hidden;
-    transition: background-color 0.3s, border-color 0.3s;
-    display: flex; /* Add flex display */
-    align-items: flex-start; /* Align items to the top */
+    margin-bottom: 20px; 
+    margin-left: 160px; 
+    display: flex;
+    flex-direction: column; 
+    align-items: left; 
+    height: 300px; 
+    padding: 20px; 
+    width: 280px; 
 }
 
 .event h3 {
     color: var(--white);
-    cursor: pointer;
     font-size: 18px;
-    margin-left: 3px;
-    margin-top: 0; /* Remove top margin */
+    margin-left: 0;
+    margin: 5px 0px; /* Adjust margins */
 }
 
 .event p {
-    max-height: 50px;
-    margin-left: -10px;
-    padding: 0 30px; /* Remove top and bottom padding */
+    margin: 5px 0; /* Adjust margins */
+    padding: 0; /* Remove padding */
     color: var(--white);
     font-size: 13px;
-    margin-bottom: 0; /* Remove bottom margin */
 }
 
 .date {
-    margin-bottom: -90px;
+    margin: 10px 0; /* Space above and below the date */
     color: var(--white);
-    font-size: 10rem;
-    margin-right: 10px; /* Adjust right margin */
+    font-size: 14px; /* Adjust font size */
 }
 
 .eventimage {
-    width: 90%;
-    height: auto;
-    margin-bottom: 10px;
-    padding: 30px 30px;
+    width: 100%; /* Ensure the image takes full width of the container */
+    height: 150px; /* Set a fixed height for uniformity */
+    object-fit: cover; /* Maintain aspect ratio and cover the area */
+    margin-bottom: 10px; /* Add space below the image */
 }
+
+
 
 /* Explore tab */
 .explore_tab {
@@ -536,7 +537,6 @@ footer {
     text-decoration: none;
     font-size: 13px;
     color:#ccc;
-    padding-left: 20px;
     top: -80px;
 }
 
