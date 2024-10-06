@@ -32,7 +32,177 @@
     </nav>
 
     <!-- Resources Section -->
+    <div class="resources_pipeline">
+        <h2 style="text-align: center; margin-top: 120px;">Want to learn Machine Learning/AI?</h2>
+        <p style="text-align: center; margin-top: -20px;">Here's what we'd reccomend.</p>
     
+    <!-- Dropdown to select a pipeline -->
+<label for="pipelineSelect">I want to focus on...</label>
+<select id="pipelineSelect">
+    <option value="">(choose your option)</option>
+    <option value="math">The Math Behind AI</option>
+    <option value="programming">Programming Languages</option>
+    <option value="neural">Neural Networks</option>
+    <option value="algorithms">ML Algorithms</option>
+</select>
+
+<!-- Container to hold the different pipelines -->
+<div id="pipelinesContainer">
+    <!-- Math Behind AI Pipeline -->
+<div id="mathPipeline" class="pipeline">
+    <div class="event">
+        <img src="{% static 'images/linearalgebra.svg' %}" class="event-image" alt="Linear Algebra Image">
+        <p class="date">Step 1</p>
+        <a class="lecture_link" href="https://www.coursera.org/learn/machine-learning-linear-algebra?specialization=mathematics-for-machine-learning-and-data-science" target="_blank">
+            <h3>Linear Algebra Basics</h3>
+        </a>
+        <p>Understand matrices, vectors, and linear transformations.</p>
+    </div>
+    <div class="event">
+        <img src="{% static 'images/calculus.svg' %}" class="event-image" alt="Calculus Image">
+        <p class="date">Step 2</p>
+        <a class="lecture_link" href="https://www.coursera.org/learn/machine-learning-calculus?specialization=mathematics-for-machine-learning-and-data-science" target="_blank">
+            <h3>Calculus for Optimization</h3>
+        </a>
+        <p>Learn about derivatives, gradients, and optimization techniques.</p>
+    </div>
+    <div class="event">
+        <img src="{% static 'images/probability.svg' %}" class="event-image" alt="Probability Image">
+        <p class="date">Step 3</p>
+        <a class="lecture_link" href="https://www.coursera.org/learn/machine-learning-probability-and-statistics?specialization=mathematics-for-machine-learning-and-data-science" target="_blank">
+            <h3>Probability & Statistics</h3>
+        </a>
+        <p>Grasp probability distributions and statistical inference.</p>
+    </div>
+</div>
+
+<!-- Programming Languages to Know Pipeline -->
+<div id="programmingPipeline" class="pipeline">
+    <div class="event">
+        <img src="{% static 'images/python.svg' %}" class="event-image" alt="Python Image">
+        <p class="date">Step 1</p>
+        <a class="lecture_link" href="https://www.coursera.org/learn/python-for-applied-data-science-ai?utm_medium=sem&utm_source=gg&utm_campaign=B2C_NAMER_ibm-data-science_ibm_FTCOF_professional-certificates_country-US-country-CA&campaignid=1876641588&adgroupid=117357906417&device=c&keyword=&matchtype=&network=g&devicemodel=&adposition=&creativeid=507196710149&hide_mobile_promo&gad_source=1&gclid=EAIaIQobChMI05eWltX4iAMV3YRaBR0H7StwEAAYASAAEgKL8_D_BwE" target="_blank">
+            <h3>Python for Data Science</h3>
+        </a>
+        <p>Familiarize yourself with libraries like Pandas and NumPy.</p>
+    </div>
+    <div class="event">
+        <img src="{% static 'images/R.svg' %}" class="event-image" alt="R Language Image">
+        <p class="date">Step 2</p>
+        <a class="lecture_link" href="https://swirlstats.com/" target="_blank">
+            <h3>R for Statistical Analysis</h3>
+        </a>
+        <p>Learn R for statistical modeling and data visualization.</p>
+    </div>
+    <div class="event">
+        <img src="{% static 'images/SQL.svg' %}" class="event-image" alt="SQL Image">
+        <p class="date">Step 3</p>
+        <a class="lecture_link" href="https://www.codecademy.com/learn/learn-sql" target="_blank">
+            <h3>SQL for Data Querying</h3>
+        </a>
+        <p>Understand how to query and manipulate datasets with SQL.</p>
+    </div>
+</div>
+
+<!-- Neural Networks Pipeline -->
+<div id="neuralPipeline" class="pipeline">
+    <div class="event">
+        <img src="{% static 'images/perceptron.svg' %}" class="event-image" alt="Perceptron Image">
+        <p class="date">Step 1</p>
+        <a class="lecture_link" href="https://pll.harvard.edu/course/cs50s-introduction-artificial-intelligence-python" target="_blank">
+            <h3>Perceptron Model</h3>
+        </a>
+        <p>Learn about perceptrons and basic neural units.</p>
+    </div>
+    <div class="event">
+        <img src="{% static 'images/tensorflow.svg' %}" class="event-image" alt="Neural Network Image">
+        <p class="date">Step 2</p>
+        <a class="lecture_link" href="https://www.coursera.org/specializations/machine-learning-introduction" target="_blank">
+            <h3>Building a Neural Network</h3>
+        </a>
+        <p>Construct simple neural networks using TensorFlow or PyTorch.</p>
+    </div>
+    <div class="event">
+        <img src="{% static 'images/deeplearning.svg' %}" class="event-image" alt="Deep Learning Image">
+        <p class="date">Step 3</p>
+        <a class="lecture_link" href="http://introtodeeplearning.com/" target="_blank">
+            <h3>Deep Learning Architectures</h3>
+        </a>
+        <p>Explore advanced architectures like CNNs and RNNs.</p>
+    </div>
+</div>
+
+<!-- ML Algorithms Pipeline -->
+<div id="algorithmsPipeline" class="pipeline">
+    <div class="event">
+        <img src="{% static 'images/supervised.svg' %}" class="event-image" alt="Supervised Learning Image">
+        <p class="date">Step 1</p>
+        <a class="lecture_link" href="https://www.coursera.org/specializations/machine-learning-introduction" target="_blank">
+            <h3>Supervised Learning</h3>
+        </a>
+        <p>Understand linear regression, decision trees, and SVMs.</p>
+    </div>
+    <div class="event">
+        <img src="{% static 'images/unsupervised.svg' %}" class="event-image" alt="Unsupervised Learning Image">
+        <p class="date">Step 2</p>
+        <a class="lecture_link" href="https://www.coursera.org/specializations/machine-learning-introduction" target="_blank">
+            <h3>Unsupervised Learning</h3>
+        </a>
+        <p>Learn about clustering techniques like k-means and PCA.</p>
+    </div>
+    <div class="event">
+        <img src="{% static 'images/reinforcement.svg' %}" class="event-image" alt="Reinforcement Learning Image">
+        <p class="date">Step 3</p>
+        <a class="lecture_link" href="https://www.coursera.org/specializations/machine-learning-introduction" target="_blank">
+            <h3>Reinforcement Learning</h3>
+        </a>
+        <p>Dive into the basics of Q-learning and deep reinforcement learning.</p>
+    </div>
+</div>
+
+<!-- JavaScript to control the display of pipelines -->
+<script>
+    // Get references to HTML elements
+    const pipelineSelect = document.getElementById('pipelineSelect');
+    const pipelinesContainer = document.getElementById('pipelinesContainer');
+
+    pipelineSelect.addEventListener('change', function () {
+        const pipelines = pipelinesContainer.getElementsByClassName('pipeline');
+        for (let i = 0; i < pipelines.length; i++) {
+            pipelines[i].style.display = 'none';
+        }
+
+        // Get the selected value
+        const selectedValue = pipelineSelect.value;
+
+        if (selectedValue === 'math') {
+            document.getElementById('mathPipeline').style.display = 'flex';
+        } else if (selectedValue === 'programming') {
+            document.getElementById('programmingPipeline').style.display = 'flex';
+        } else if (selectedValue === 'neural') {
+            document.getElementById('neuralPipeline').style.display = 'flex';
+        } else if (selectedValue === 'algorithms') {
+            document.getElementById('algorithmsPipeline').style.display = 'flex';
+        }
+    });
+</script>
+    
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -45,26 +215,7 @@
         <a href="{% url 'resources' %}">Resources</a>
     </div>
 
-    <!-- Call to Action (Discord Join) -->
-    <!-- IMPLEMENT EMAIL SENT -->
-    <div class="contact">
-        <h2>Interested?</h2>
-        <p style="width: 700px;">Join a community of innovators exploring the limitless possibilities of AI and machine learning. Discover, learn, and make an impact with us.</p>
-        <form action="send_email.php" method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Your Name" required>
-            <label for="subject">Subject:</label>
-            <input type="text" id="subject" name="subject" placeholder="Subject of Email"required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Your Email"required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" placeholder="Write your message here!" required></textarea>
-            
-            <button type="submit">Send Message</button>
-        </form>
-        
-        <a class="join_bc" href="https://discord.gg/gnuFjMQfgD" target="_blank">BC Student? Click here.</a>
-    </div>
+    
 
     <div class = "footer">
         <img src="{% static 'images/logo.png' %}" alt="Logo" class="footer_logo">
