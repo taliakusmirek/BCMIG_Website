@@ -1,26 +1,54 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.core.mail import send_mail
+from django.http import HttpResponse
+from .forms import ContactForm
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    form = ContactForm()
+    return render(request, 'index.html', {'form': form})
 
 def eboard(request):
-    return render(request, 'eboard.html')
+    form = ContactForm()
+    return render(request, 'eboard.html', {'form': form})
 
 def events(request):
-    return render(request, 'events.html')
+    form = ContactForm()
+    return render(request, 'events.html', {'form': form})
 
 def contact(request):
-    return render(request, 'contact.html')
+    form = ContactForm()
+    return render(request, 'contact.html', {'form': form})
+
+def contact_view(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            subject = form.cleaned_data['subject']
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+            
+            email_message = f'Name: {name}\nSubject: {subject}\nEmail: {email}\nMessage: {message}'
+
+            send_mail(subject, email_message, email, ['migofbostoncollege@gmail.com'])
+            return HttpResponse('Thank you for contacting us!')
+        else:
+            return HttpResponse('Invalid form')
+    else:
+        form = ContactForm()
+    return render(request, 'contact.html', {'form': form})
+
+
+
 
 def lectures(request):
-    return render(request, 'lectures.html')
+    form = ContactForm()
+    return render(request, 'lectures.html', {'form': form})
 
 def resources(request):
     return render(request, 'resources.html')
 
 def workshops(request):
-    return render(request, 'workshops.html')
-
-def error(request):
-    return render(request, '404.html')
+    form = ContactForm()
+    return render(request, 'workshops.html', {'form': form})

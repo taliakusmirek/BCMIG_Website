@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -108,24 +109,7 @@
 
     <!-- Call to Action (Discord Join) -->
     <!-- IMPLEMENT EMAIL SENT -->
-    <div class="contact">
-        <h2>Interested?</h2>
-        <p style="width: 700px;">Join a community of innovators exploring the limitless possibilities of AI and machine learning. Discover, learn, and make an impact with us.</p>
-        <form action="send_email.php" method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Your Name" required>
-            <label for="subject">Subject:</label>
-            <input type="text" id="subject" name="subject" placeholder="Subject of Email"required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Your Email"required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" placeholder="Write your message here!" required></textarea>
-            
-            <button type="submit">Send Message</button>
-        </form>
-        
-        <a class="join_bc" href="https://discord.gg/gnuFjMQfgD" target="_blank">BC Student? Click here.</a>
-    </div>
+    {% include 'contact.html' %}
 
     <div class = "footer">
         <img src="{% static 'images/logo.png' %}" alt="Logo" class="footer_logo">
