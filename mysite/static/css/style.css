@@ -728,6 +728,7 @@ footer {
         right: 0;
         transform: none;
         z-index: -1;
+        opacity: 0.4; /* Change opacity to 0.8 */
     }
 
     .explore_tab {

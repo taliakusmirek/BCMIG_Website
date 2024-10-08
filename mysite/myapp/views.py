@@ -32,7 +32,7 @@ def contact_view(request):
             email_message = f'Name: {name}\nSubject: {subject}\nEmail: {email}\nMessage: {message}'
 
             send_mail(subject, email_message, email, ['migofbostoncollege@gmail.com'])
-            return HttpResponse('Thank you for contacting us!')
+            return redirect('index')
         else:
             return HttpResponse('Invalid form')
     else:
