@@ -129,4 +129,4 @@ EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = "migofbostoncollege@gmail.com"
-EMAIL_HOST_PASSWORD = "pcub cptv dorg nkai" # This is a dummy password, replace it with your own password
+EMAIL_HOST_PASSWORD = "" # This is a dummy password, replace it with your own password
