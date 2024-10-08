@@ -40,7 +40,7 @@ The following environment variables should be set in your `.env` file or in Rend
 
 ## Deployment
 
-We are using **Render** for deployment. Here's how you can deploy the project:
+We are using **Render** for deployment.
 
 ## License
 
