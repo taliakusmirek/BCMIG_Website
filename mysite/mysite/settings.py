@@ -114,9 +114,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = "/static/"
-STATIC_ROOT = config(BASE_DIR / "staticfiles")
+STATIC_ROOT = str(BASE_DIR / "staticfiles")
 
-if not DEBUG:
+# Set the STATIC_ROOT for production
+if not DEBUG:  # Ensure this is only set for production
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
