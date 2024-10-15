@@ -6,19 +6,19 @@ from .forms import ContactForm
 # Create your views here.
 def index(request):
     form = ContactForm()
-    return render(request, 'index.html', {'form': form})
+    return render(request, 'myapp/index.html', {'form': form})
 
 def eboard(request):
     form = ContactForm()
-    return render(request, 'eboard.html', {'form': form})
+    return render(request, 'myapp/eboard.html', {'form': form})
 
 def events(request):
     form = ContactForm()
-    return render(request, 'events.html', {'form': form})
+    return render(request, 'myapp/events.html', {'form': form})
 
 def contact(request):
     form = ContactForm()
-    return render(request, 'contact.html', {'form': form})
+    return render(request, 'myapp/contact.html', {'form': form})
 
 def contact_view(request):
     if request.method == 'POST':
@@ -37,18 +37,18 @@ def contact_view(request):
             return HttpResponse('Invalid form')
     else:
         form = ContactForm()
-    return render(request, 'contact.html', {'form': form})
+    return render(request, 'myapp/contact.html', {'form': form})
 
 
 
 
 def lectures(request):
     form = ContactForm()
-    return render(request, 'lectures.html', {'form': form})
+    return render(request, 'myapp/lectures.html', {'form': form})
 
 def resources(request):
-    return render(request, 'resources.html')
+    return render(request, 'myapp/resources.html')
 
 def workshops(request):
     form = ContactForm()
-    return render(request, 'workshops.html', {'form': form})
+    return render(request, 'myapp/workshops.html', {'form': form})

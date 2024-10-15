@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boston College Machine Learning Group</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class = "nav-container">
+        <a href="{% url 'index' %}">
+            <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo">
+        </a>
+            <a href="{% url 'eboard' %}">Meet the Board</a>
+            <a href="{% url 'events' %}">Calendar</a>
+            
+            <div class="dropdown">
+                <button class="dropbtn">Our Programs</button>
+                <div class="dropdown-content">
+                    <a href="{% url 'lectures' %}">Lectures</a>
+                <a href="{% url 'workshops' %}">Workshops</a>
+                <a href="{% url 'resources' %}">Resources</a>
+                </div>
+                <a href="https://discord.gg/gnuFjMQfgD" target="_blank">Join</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Lectures Section -->
+    <div class="recent">
+        <h2 style="text-align: center; margin-top:-40px;">Our Lectures</h2>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <div class="event" style="margin-left: .1em;">
+                <img src="{% static 'images/workshop1.png' %}" class="eventimage" alt="Guest Lecture Image">
+                <p class="date">September 23, 2024</p>
+                <a class="lecture_link" href="https://www.youtube.com/watch?v=tzkl9OELL64&t=1s" target="_blank">
+                    <h3>Synthetic Signature Generation</h3>
+                </a>
+                <p>Josh Gorniak discusses his summer research on signatures.</p>
+            </div>
+
+            <div class="event">
+                <img src="{% static 'images/steve.png' %}" class="eventimage" alt="Workshop Image">
+                <p class="date">September 16, 2024</p>
+                <a class="lecture_link" href="https://www.youtube.com/watch?v=ydqwP93WQ_4&t=771s" target="_blank">
+                    <h3>Introduction to CNNs</h3>
+                </a>
+                <p>Learn the basics of Convolutional Neural Networks with Steve!</p>
+            </div>
+
+            <div class="event">
+                <img src="{% static 'images/intro.jpg' %}" class="eventimage" alt="Hackathon Image">
+                <p class="date">September 9, 2024</p>
+                <a class="lecture_link" href="https://www.youtube.com/watch?v=D-2qMSEclbg&t=2s" target="_blank">
+                    <h3>Introduction to Machine Learning</h3>
+                </a>
+                <p>Talk by Jason Ken Adhinarta!</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Explore Section -->
+    <div class="explore_tab">
+        <h3>Explore our</h3>
+        <a href="{% url 'lectures' %}">Lectures</a>
+        <a href="{% url 'workshops' %}">Workshops</a>
+        <a href="{% url 'resources' %}">Resources</a>
+    </div>
+
+    <!-- Call to Action (Discord Join) -->
+    <!-- IMPLEMENT EMAIL SENT -->
+    {% include 'myapp/contact.html' %}
+
+    <div class = "footer">
+        <img src="{% static 'images/logo.png' %}" alt="Logo" class="footer_logo">
+
+        <div class="footer-links">
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'eboard' %}">Meet the Board</a>
+            <a href="{% url 'lectures' %}">Lectures</a>
+            <a href="{% url 'workshops' %}">Workshops</a>
+            <a href="{% url 'events' %}">Calendar</a>
+            <a href="{% url 'resources' %}">Resources</a>
+        </div>
+        <div class="footer-links" style="margin-top: 20px;">
+            <a href="https://instagram.com/migbostoncollege" target="_blank"><img src="{% static 'images/instagram.png' %}" class="linkedin"></a>
+            <a href="https://www.youtube.com/@migofbc" target="_blank"><img src="{% static 'images/youtube.png' %}" class="linkedin"></a>
+        </div>
+        <p style="font-size: 8px;">&copy; 2024 Boston College Machine Learning Group</p>
+    </div>
+
+
+
+
+
+
+
+    <script>
+        function toggleAnswer(questionElement) {
+            const faq = questionElement.parentElement;
+            faq.classList.toggle('active');
+            if (faq.classList.contains('active')) {
+                faq.style.animation = 'bubblyJump 0.5s ease-in-out';
+            } else {
+                faq.style.animation = '';
+            }
+        }
+
+        window.onscroll = function() {
+    const nav = document.querySelector('nav');
+    if (window.pageYOffset > 0) {
+        nav.classList.add('sticky');
+    } else {
+        nav.classList.remove('sticky');
+    }
+};
+    </script>
+    <style>
+        @keyframes bubblyJump {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</body>
+
+</html>

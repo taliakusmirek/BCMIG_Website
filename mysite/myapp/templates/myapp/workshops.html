@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boston College Machine Learning Group</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class = "nav-container">
+        <a href="{% url 'index' %}">
+            <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo">
+        </a>
+            <a href="{% url 'eboard' %}">Meet the Board</a>
+            <a href="{% url 'events' %}">Calendar</a>
+            
+            <div class="dropdown">
+                <button class="dropbtn">Our Programs</button>
+                <div class="dropdown-content">
+                    <a href="{% url 'lectures' %}">Lectures</a>
+                <a href="{% url 'workshops' %}">Workshops</a>
+                <a href="{% url 'resources' %}">Resources</a>
+                </div>
+                <a href="https://discord.gg/gnuFjMQfgD" target="_blank">Join</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Workshops Section -->
+    <div class="recent">
+        <div style="height: 30vh; display: flex; justify-content: center; align-items: center;">
+            <h2 style="text-align: center;">Workshops coming soon!</h2>
+        </div>
+        
+    </div>
+
+
+
+
+    <!-- Explore Section -->
+    <div class="explore_tab">
+        <h3>Explore our</h3>
+        <a href="{% url 'lectures' %}">Lectures</a>
+        <a href="{% url 'workshops' %}">Workshops</a>
+        <a href="{% url 'resources' %}">Resources</a>
+    </div>
+
+    <!-- Call to Action (Discord Join) -->
+    <!-- IMPLEMENT EMAIL SENT -->
+    {% include 'myapp/contact.html' %}
+
+    <div class = "footer">
+        <img src="{% static 'images/logo.png' %}" alt="Logo" class="footer_logo">
+
+        <div class="footer-links">
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'eboard' %}">Meet the Board</a>
+            <a href="{% url 'lectures' %}">Lectures</a>
+            <a href="{% url 'workshops' %}">Workshops</a>
+            <a href="{% url 'events' %}">Calendar</a>
+            <a href="{% url 'resources' %}">Resources</a>
+        </div>
+        <div class="footer-links" style="margin-top: 20px;">
+            <a href="https://instagram.com/migbostoncollege" target="_blank"><img src="{% static 'images/instagram.png' %}" class="linkedin"></a>
+            <a href="https://www.youtube.com/@migofbc" target="_blank"><img src="{% static 'images/youtube.png' %}" class="linkedin"></a>
+        </div>
+        <p style="font-size: 8px;">&copy; 2024 Boston College Machine Learning Group</p>
+    </div>
+
+
+
+
+
+
+
+    <script>
+        function toggleAnswer(questionElement) {
+            const faq = questionElement.parentElement;
+            faq.classList.toggle('active');
+            if (faq.classList.contains('active')) {
+                faq.style.animation = 'bubblyJump 0.5s ease-in-out';
+            } else {
+                faq.style.animation = '';
+            }
+        }
+
+        window.onscroll = function() {
+    const nav = document.querySelector('nav');
+    if (window.pageYOffset > 0) {
+        nav.classList.add('sticky');
+    } else {
+        nav.classList.remove('sticky');
+    }
+};
+    </script>
+    <style>
+        @keyframes bubblyJump {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</body>
+
+</html>
+
+
+
+
+<!--
+<div style="display: flex; align-items: center; padding-right:70px;">
+    <div class="event">
+        <img src="{% static 'images/test.png' %}" class="eventimage" alt="Workshop Image">
+        <p class="date">September 20, 2024</p>
+        <h3>Workshop: Python for ML</h3>
+        <p class="event_info">An introductory workshop on using Python for machine learning, covering key libraries such as NumPy, Pandas, and scikit-learn.</p>
+    </div>
+    
+    <div class="event" style="margin-left: 4.5em;">
+        <img src="{% static 'images/test.png' %}" class="eventimage" alt="Guest Lecture Image">
+        <p class="date">October 5, 2024</p>
+        <h3>Sentiment Analysis Workshop</h3>
+        <p>MIG presents on Sentiment Analysis during Computer Science Society's annual 'Hack The Heights' Hackathon!</p>
+        <a class="lecture_link" href="https://www.youtube.com/watch?v=ydqwP93WQ_4&t=771s" target="_blank">Watch Here!</a>
+
+    </div>
+
+    <div class="event">
+        <img src="{% static 'images/test.png' %}" class="eventimage" alt="Hackathon Image">
+        <p class="date">September 20, 2024</p>
+        <h3>AI for Social Good Hackathon</h3>
+        <p>A weekend hackathon focused on using AI to tackle issues related to education, healthcare, and sustainability.</p>
+    </div>
+</div>
+-->

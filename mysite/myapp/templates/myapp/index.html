@@ -1,0 +1,177 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boston College Machine Learning Group</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class = "nav-container">
+        <a href="{% url 'index' %}">
+            <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo">
+        </a>
+            <a href="{% url 'eboard' %}">Meet the Board</a>
+            <a href="{% url 'events' %}">Calendar</a>
+            
+            <div class="dropdown">
+                <button class="dropbtn">Our Programs</button>
+                <div class="dropdown-content">
+                    <a href="{% url 'lectures' %}">Lectures</a>
+                <a href="{% url 'workshops' %}">Workshops</a>
+                <a href="{% url 'resources' %}">Resources</a>
+                </div>
+                <a href="https://discord.gg/gnuFjMQfgD" target="_blank">Join</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <img src="{% static 'images/landingimage.png' %}" class="landingimage" alt="Landing Image">
+        <h1 style="flex: 1; width: 400px; text-align: left; margin-left: 2.5em; margin-top: 150px; position:absolute;">Students at the forefront of shaping AI's future.</h1>
+    </div>
+
+    <!-- Mission Section -->
+    <div class="about">
+        <div style="display: flex; align-items: center;">
+            <div style="margin-left: 4.5em;">
+                <h2>Our Mission</h2>
+                <p>
+                    The Boston College Machine Learning Group is a hub of highly motivated undergraduate students committed to 
+                    advancing the field of machine learning. <br><br> Our mission is to develop, explore, and apply machine learning techniques 
+                    to solve real-world problems and to promote knowledge and skills in AI through workshops, guest lectures, and hands-on projects.
+                </p>
+            </div>
+
+            <div class="faqs">
+                <div class="faq">
+                    <h3 class="faq-question" onclick="toggleAnswer(this)">I don't know anything about AI or programming. Should I still join?</h3>
+                    <p class="faq-answer">Yes! The first MIG lecture each year is a crash course in machine learning and following lectures are approachable to a general audience. As the year goes on, we will dive into increasingly complex topics, but we also strive to provide a space to ask any questions no matter how rudimentary. Alongside the resources we share during meetings, our <a href="{% url 'resources' %}">resource page</a> is perfect for a beginner to hone their understanding and comfort with overtime.</p>
+                </div>
+                <div class="faq">
+                    <h3 class="faq-question" onclick="toggleAnswer(this)">Could MIG help me get involved with research?</h3>
+                    <p class="faq-answer">Yes! The eboard and your fellow club members have connections in the BC research community and beyond. Just ask!</p>
+                </div>
+                <div class="faq">
+                    <h3 class="faq-question" onclick="toggleAnswer(this)">Can I give a talk at MIG?</h3>
+                    <p class="faq-answer">Anyone in MIG can volunteer to give a talk at our weekly meetings. Talks typically run ~30 minutes and are supplemented with a slide show (and the occasional notebook). All talks are recorded and posted on the Youtube channel. <a href="https://docs.google.com/spreadsheets/d/1_6mwXcgj5KpD-l4cis5ffRtdCGzpTVsuvfdd8IpJllY/edit?gid=0#gid=0" target="_blank">Signing up to give a talk</a> implies consent to be recorded. If you have any questions or concerns, please reach out to an eboard member.</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Recent Work Section -->
+    <div class="recent">
+        <h2 style="margin-left: 2.2em;">Recent Events</h2>
+        <div style="display: flex; justify-content: center;">
+            <div class="event" style="margin-left: .1em;">
+                <img src="{% static 'images/workshop1.png' %}" class="eventimage" alt="Guest Lecture Image">
+                <p class="date">October 5, 2024</p>
+                <h3>Sentiment Analysis Workshop</h3>
+                <p>MIG presents on Sentiment Analysis during Computer Science Society's annual 'Hack The Heights' Hackathon!</p>
+            </div>
+
+            <div class="event">
+                <img src="{% static 'images/joshlecture.png' %}" class="eventimage" alt="Workshop Image">
+                <p class="date">September 23, 2024</p>
+                <h3>What is Synthetic Signature Generation?</h3>
+                <p class="event_info">Josh Gorniak discusses his summer research on signatures.                </p>
+            </div>
+
+            <div class="event">
+                <img src="{% static 'images/intro.jpg' %}" class="eventimage" alt="Hackathon Image">
+                <p class="date">September 9, 2024</p>
+                <h3>Introduction to Machine Learning</h3>
+                <p>Talk by Jason Ken Adhinarta!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Explore Section -->
+    <div class="explore_tab">
+        <h3>Explore our</h3>
+        <a href="{% url 'lectures' %}">Lectures</a>
+        <a href="{% url 'workshops' %}">Workshops</a>
+        <a href="{% url 'resources' %}">Resources</a>
+    </div>
+
+    <!-- Call to Action (Discord Join) -->
+    <!-- IMPLEMENT EMAIL SENT -->
+    {% include 'myapp/contact.html' %}
+
+    <div class = "footer">
+        <img src="{% static 'images/logo.png' %}" alt="Logo" class="footer_logo">
+
+        <div class="footer-links">
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'eboard' %}">Meet the Board</a>
+            <a href="{% url 'lectures' %}">Lectures</a>
+            <a href="{% url 'workshops' %}">Workshops</a>
+            <a href="{% url 'events' %}">Calendar</a>
+            <a href="{% url 'resources' %}">Resources</a>
+        </div>
+        <div class="footer-links" style="margin-top: 20px;">
+            <a href="https://instagram.com/migbostoncollege" target="_blank"><img src="{% static 'images/instagram.png' %}" class="linkedin"></a>
+            <a href="https://www.youtube.com/@migofbc" target="_blank"><img src="{% static 'images/youtube.png' %}" class="linkedin"></a>
+        </div>
+        <p style="font-size: 8px;">&copy; 2024 Boston College Machine Learning Group</p>
+    </div>
+
+
+
+
+
+
+
+    <script>
+        function toggleAnswer(questionElement) {
+            const faq = questionElement.parentElement;
+            faq.classList.toggle('active');
+            if (faq.classList.contains('active')) {
+                faq.style.animation = 'bubblyJump 0.5s ease-in-out';
+            } else {
+                faq.style.animation = '';
+            }
+        }
+
+        window.onscroll = function() {
+    const nav = document.querySelector('nav');
+    if (window.pageYOffset > 0) {
+        nav.classList.add('sticky');
+    } else {
+        nav.classList.remove('sticky');
+    }
+};
+    </script>
+    <style>
+        @keyframes bubblyJump {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</body>
+
+
+
+
+
+</html>
