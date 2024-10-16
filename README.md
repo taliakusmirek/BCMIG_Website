@@ -26,7 +26,7 @@ The **BCMIG Website** is the online presence of the Machine Intelligence Group a
 ## Tech Stack
 - **Frontend**: HTML, CSS, JavaScript, Bootstrap
 - **Backend**: Django 5.0.7 (Python)
-- **Database**: SQLite (for local development), PostgreSQL (for production)
+- **Database**: Render.com (free version)
 - **Hosting**: Render.com
 
 
