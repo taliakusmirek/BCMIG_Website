@@ -191,16 +191,15 @@ footer {
 /* Images */
 
 .landingimage {
-    position: relative;
-    width: 50vw; /* Adjust this based on how much space you want the image to take up */
-    max-height: 100vh; /* Prevents the image from going beyond the viewport height */
-    object-fit: cover; /* Ensures the image covers its container without stretching */
-    top: 20px;
-    right: 0;
-    transform: none;
+    width: 60vw;
+    max-height: 100vh;
+    position: absolute;
+    top: 80px;
+    right: 20px; /* Position the image on the right */
     z-index: -1;
-    opacity: 0.4; /* Adjust opacity */
+    opacity: 0.4;
 }
+
 
 .aboutimage {
     width: auto;
