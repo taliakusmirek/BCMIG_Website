@@ -79,28 +79,35 @@
     <div class="recent">
         <h2 style="margin-left: 2.2em;">Recent Events</h2>
         <div style="display: flex; justify-content: center;">
-            <div class="event" style="margin-left: .1em;">
-                <img src="{% static 'images/workshop1.png' %}" class="eventimage" alt="Guest Lecture Image">
-                <p class="date">October 5, 2024</p>
-                <h3>Sentiment Analysis Workshop</h3>
-                <p>MIG presents on Sentiment Analysis during Computer Science Society's annual 'Hack The Heights' Hackathon!</p>
+            <!-- Most recent event -->
+            <div class="event" style="margin-left: .6em;">
+                <img src="{% static 'images/supervised_learning.png' %}" class="eventimage" alt="Supervised Learning Image">
+                <p class="date">October 21, 2024</p>
+                <a class="lecture_link" href="https://www.youtube.com/watch?v=Htoq6A4Fb6U" target="_blank">
+                <h3>Basics of Supervised Learning</h3>
+                <p>Talia Kusmirek presents the basics of supervised learning and types of algorithm within each of its subrealms.</p>
             </div>
-
+    
+            <!-- Second most recent event -->
+            <div class="event" style="margin-right: .0em;">
+                <img src="{% static 'images/matthew.png' %}" class="eventimage" alt="Guest Lecture Image">
+                <p class="date">October 7, 2024</p>
+                <a class="lecture_link" href="https://www.youtube.com/watch?v=Gb4J4X2lvUM" target="_blank">
+                <h3>RNNs and Test-Time Training</h3>
+                <p>MIG member Matthew Eichelman discusses Recurrent Neural Networks and ways to test-time train with them!</p>
+            </div>
+    
+            <!-- Third most recent event -->
             <div class="event">
                 <img src="{% static 'images/joshlecture.png' %}" class="eventimage" alt="Workshop Image">
                 <p class="date">September 23, 2024</p>
+                <a class="lecture_link" href="https://www.youtube.com/watch?v=tzkl9OELL64&t=1s" target="_blank">
                 <h3>What is Synthetic Signature Generation?</h3>
-                <p class="event_info">Josh Gorniak discusses his summer research on signatures.                </p>
-            </div>
-
-            <div class="event">
-                <img src="{% static 'images/intro.jpg' %}" class="eventimage" alt="Hackathon Image">
-                <p class="date">September 9, 2024</p>
-                <h3>Introduction to Machine Learning</h3>
-                <p>Talk by Jason Ken Adhinarta!</p>
+                <p class="event_info">Josh Gorniak discusses his summer research on signatures.</p>
             </div>
         </div>
     </div>
+    
 
     <!-- Explore Section -->
     <div class="explore_tab">
